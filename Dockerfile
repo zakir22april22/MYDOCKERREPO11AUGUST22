@@ -1,8 +1,6 @@
-FROM python:3.9
+FROM python:3.8
 
-WORKDIR .
-
-COPY application.py
+ADD application.py
 
 CMD ["python","application.py"]
 
