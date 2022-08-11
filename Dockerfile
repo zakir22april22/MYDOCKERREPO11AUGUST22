@@ -1,11 +1,9 @@
-FROM python:3.10.2
+FROM python:3.11.0b5-bullseye
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY requirements.txt ./
+COPY requirements.txt .
 
-RUN -m pip install --upgrade pip --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
-COPY . .
-
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+COPY /app .
