@@ -1,9 +1,8 @@
-FROM python:3.11.0b5-bullseye
+FROM python:3.9
 
-WORKDIR /app
+WORKDIR .
 
-COPY requirements.txt .
+COPY application.py
 
-RUN pip install -r requirements.txt
+CMD ["python","application.py"]
 
-COPY /app .
